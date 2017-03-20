@@ -1,0 +1,4 @@
+security:
+  user:
+    name: usr
+    password: pwd

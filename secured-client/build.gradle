@@ -1,0 +1,30 @@
+plugins {
+  id 'org.springframework.boot' version '1.5.2.RELEASE'
+  id 'com.moowork.node' version '1.1.1'
+}
+
+dependencies {
+  compile('org.springframework.boot:spring-boot-starter-web')
+  runtime('org.springframework.boot:spring-boot-devtools')
+  compileOnly('org.projectlombok:lombok')
+  testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+springBoot {
+  executable = true
+}
+
+node {
+  version = '6.9.2'
+  npmVersion = '3.10.9'
+  nodeModulesDir = file "$project.projectDir/src/main/react"
+//  // https://github.com/srs/gradle-node-plugin/issues/171
+//  download = true
+}
+
+assemble {
+  dependsOn npm_run_build
+}
+
+npm_run_build.dependsOn npm_i
+assemble.shouldRunAfter npm_run_build

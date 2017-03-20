@@ -1,0 +1,17 @@
+plugins {
+  id 'java'
+  id 'org.springframework.boot' version '1.5.2.RELEASE'
+}
+
+dependencies {
+  compile 'org.springframework.security.oauth:spring-security-oauth2',
+      'org.springframework.boot:spring-boot-starter-security',
+      'org.springframework.boot:spring-boot-starter-web'
+  runtime('org.springframework.boot:spring-boot-devtools')
+  compileOnly('org.projectlombok:lombok')
+  testCompile('org.springframework.boot:spring-boot-starter-test')
+}
+
+springBoot {
+  executable = true
+}

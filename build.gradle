@@ -1,0 +1,21 @@
+plugins {
+  id 'idea'
+}
+
+allprojects { currproject ->
+  version = '0.0.1'
+  group = 'daggerok'
+  apply plugin: 'java'
+  sourceCompatibility = JavaVersion.VERSION_1_8
+  processResources {
+    expand(project.properties)
+  }
+}
+
+subprojects { subproject ->
+  repositories {
+    mavenCentral()
+    maven { url 'http://repo.spring.io/snapshot' }
+    maven { url 'http://repo.spring.io/milestone' }
+  }
+}

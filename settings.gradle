@@ -1,0 +1,3 @@
+rootProject.name = 'secured-app'
+include 'secured-resource'
+include 'secured-client'
